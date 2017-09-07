@@ -3,7 +3,7 @@ var Vehicle= function(e,gt,mpg){
     let engine= e;
     let fuel= 1;
     let gastank=gt;
-    let averageMPG=mpg;
+    let avgMPG=mpg;
     let milesDriven=0;
 
     //getters
@@ -20,21 +20,18 @@ var Vehicle= function(e,gt,mpg){
      if (fuel>1){
          fuel=1;
      }
-     else fu{
-
-     }
  }
 function drive(hour){
     let fuelconsumed= hour*engineEfficiency();
-    if (fuelconsumed>=fuel){
-
+    if (fuelconsumed<=fuel){
+        milesDriven+=avgMPG*hour;
+        fuel-=fuelconsumed;
     }
-    else if(fuelconsumed<fuel){
-        milesDriven+=;
+    else if(fuelconsumed>fuel){
+        milesDriven+=avgMPG*fuel;
+        fuel=0
     }
 }
-
-
  function engineEfficiency(){
      if(engine== 4){
          return 1;
@@ -53,3 +50,4 @@ function drive(hour){
     return{drive,fill,totalMiles,fuelLeft}
 
 };
+module.exports=Vehicle
